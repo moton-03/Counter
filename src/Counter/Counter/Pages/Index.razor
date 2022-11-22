@@ -1,0 +1,67 @@
+﻿@page "/"
+
+<PageTitle>Counter</PageTitle>
+
+<style>
+    .Button_Text {
+        color: white;
+        font-family: Courier New;
+        font-size:larger;
+    }
+
+    .Button {
+        background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+        border: none;
+        width 200px;
+        height 200px;
+    }
+
+    .var {
+        color: white;
+        border: none;
+        background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+        font-family: Courier New;
+    }
+</style>
+
+<h1>⏰Counter</h1>
+
+<div>
+    <div>
+        <input type="text" class="var" @bind="@Count" />
+    </div>
+    <div>
+        <button class="Button" @onclick="Count_Add">
+            <span class="Button_Text">
+                +
+            </span>
+        </button>
+        <button class="Button" @onclick="Count_Reset">
+            <span class="Button_Text">
+                R
+            </span>
+        </button>
+        <button class="Button" @onclick="Count_Minus">
+            <span class="Button_Text">
+                −
+            </span>
+        </button>
+    </div>
+</div>
+
+@code {
+    int Count = 0;
+
+    void Count_Add()
+    {
+        Count += 1;
+    }
+    void Count_Minus()
+    {
+        Count -= 1;
+    }
+    void Count_Reset()
+    {
+        Count = 0;
+    }
+}
